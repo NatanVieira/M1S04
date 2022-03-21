@@ -46,3 +46,10 @@ function parOuImpar () {
     let numero = prompt("Digite um numero");
     console.log(numero % 2 === 0 ? "É par" : "É ímpar");
 }
+
+//Exercicio 4
+
+function tabuadaDo2 () {
+    for(let i = 0; i <= 10; i++)
+        console.log("2 x " + i + " = " + (i*2));
+}
