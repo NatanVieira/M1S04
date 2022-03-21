@@ -40,3 +40,9 @@ function realizaOperacoesMatematicas () {
     operacoesMatematicas(8,4,'/');
     operacoesMatematicas(4,4,'c');
 }
+
+//Exercicio 3
+function parOuImpar () {
+    let numero = prompt("Digite um numero");
+    console.log(numero % 2 === 0 ? "É par" : "É ímpar");
+}
