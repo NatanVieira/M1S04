@@ -69,3 +69,15 @@ function mostraAnimaisERaca() {
 
     animais.forEach(function(animal) {console.log(animal.animal + " " + animal.raca)});
 }
+
+//Exercicio 6
+function contaImpares() {
+    var contaImpares = 0;
+    var contador = 0;
+
+    while(contaImpares < 10) {
+        contador++;
+        contaImpares +=  contador % 2 === 0 ? 0 : 1;
+        console.log("Contador:  " + contador + " - " + "Impares: " + contaImpares);
+    }
+}
