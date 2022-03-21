@@ -93,7 +93,7 @@ function converteTemperatura() {
     console.log(temperaturaC);
 }
 
-//Exercicio 8
+//Exercicio 8 e 9
 
 function manipulaArray(opcao) {
     let cidades = [
@@ -110,4 +110,50 @@ function manipulaArray(opcao) {
     else if (opcao === 2)
         console.log(cidades.find(a => a.nome.toLowerCase() === 'florianópolis'));
 
+}
+
+// Exercicio 10
+
+function contas() {
+    let contasClientes = [
+        {id: 1, saldo: 500},
+        {id: 2, saldo: 30000},
+        {id: 3, saldo: 50}
+        ];
+    let sacaValor = (id, valor) => {
+        if(valor > 0){
+            contasClientes.forEach(conta => {
+                if(conta.id === id){
+                    if(conta.saldo >= valor){
+                        conta.saldo -= valor;
+                        console.log("Saque efetuado com sucesso, novo saldo: " + conta.saldo);
+                    }
+                    else
+                        console.log("Saque não pôde ser efetuado devido ao saldo ser menor que valor requerido.")
+                }
+            })
+        }
+        else {
+            console.log("Valor inválido para saque.")
+        }
+    }
+
+    let depositaValor = (id, valor) => {
+        if(valor > 0){
+            contasClientes.forEach(conta => {
+                if(conta.id === id){
+                    conta.saldo += valor;
+                    console.log("Depósito efetuado com sucesso, novo saldo: " + conta.saldo);
+                }
+            })
+        }
+        else {
+            console.log("Valor inválido para depósito.")
+        }
+    }
+
+    console.log(sacaValor(1, 550));
+    console.log(sacaValor(1, 200));
+    console.log(depositaValor(2, 0));
+    console.log(depositaValor(3, 400));
 }
