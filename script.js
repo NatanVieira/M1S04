@@ -53,3 +53,19 @@ function tabuadaDo2 () {
     for(let i = 0; i <= 10; i++)
         console.log("2 x " + i + " = " + (i*2));
 }
+
+//Exercicio 5
+
+function mostraAnimaisERaca() {
+    var animais = [
+        { animal: 'Cachorro', raca: 'Akita' },
+        { animal: 'Cachorro', raca: 'Boxer' },
+        { animal: 'Cachorro', raca: 'Dálmata' },
+        { animal: 'Cachorro', raca: 'Pastor alemão' },
+        { animal: 'Gato', raca: 'Persa' },
+        { animal: 'Gato', raca: 'Sphynx' },
+        { animal: 'Gato', raca: 'Siamês' },
+        ]
+
+    animais.forEach(function(animal) {console.log(animal.animal + " " + animal.raca)});
+}
