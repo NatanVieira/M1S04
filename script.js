@@ -81,3 +81,14 @@ function contaImpares() {
         console.log("Contador:  " + contador + " - " + "Impares: " + contaImpares);
     }
 }
+
+//Exercicio 7 
+
+function converteTemperatura() {
+    let temperaturaF = [ 0, 32, 45, 50, 75, 80, 99, 120 ];
+    let temperaturaC = [];
+
+    temperaturaF.forEach(function(temperatura) {temperaturaC.push(Math.round( ( temperatura - 32 ) * 5 / 9 ))})
+    console.log(temperaturaF);
+    console.log(temperaturaC);
+}
