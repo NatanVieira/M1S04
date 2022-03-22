@@ -122,38 +122,35 @@ function contas() {
         {id: 2, saldo: 30000},
         {id: 3, saldo: 50}
         ];
+
     let sacaValor = (id, valor) => {
-        if(valor > 0){
-            contasClientes.forEach(conta => {
-                if(conta.id === id){
-                    if(conta.saldo >= valor){
-                        conta.saldo -= valor;
-                        console.log("Saque efetuado com sucesso, novo saldo: " + conta.saldo);
-                    }
-                    else
-                        console.log("Saque não pôde ser efetuado devido ao saldo ser menor que valor requerido.")
+        if (valor > 0) {
+            let obj = contasClientes.find(a=>a.id === id);
+            if(obj){
+                if (obj.saldo >= valor){
+                    obj.saldo -= valor;
+                    console.log("Saque efetuado com sucesso, novo saldo: " + obj.saldo);
                 }
-            })
+                else
+                    console.log("Valor de saque maior que saldo disponível.");
+            }
         }
-        else {
-            console.log("Valor inválido para saque.")
-        }
+        else
+        console.log("Valor para saque inválido.");
     }
 
     let depositaValor = (id, valor) => {
         if(valor > 0){
-            contasClientes.forEach(conta => {
-                if(conta.id === id){
-                    conta.saldo += valor;
-                    console.log("Depósito efetuado com sucesso, novo saldo: " + conta.saldo);
+            let obj = contasClientes.find(a => a.id === id);
+            if(obj){
+                    obj.saldo += valor;
+                    console.log("Depósito efetuado com sucesso, novo saldo: " + obj.saldo);
                 }
-            })
-        }
-        else {
-            console.log("Valor inválido para depósito.")
+            }
+            else {
+                console.log("Valor inválido para depósito.")
         }
     }
-
     console.log(sacaValor(1, 550));
     console.log(sacaValor(1, 200));
     console.log(depositaValor(2, 0));
