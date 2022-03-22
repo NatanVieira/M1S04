@@ -106,7 +106,9 @@ function manipulaArray(opcao) {
         { nome: 'Pato Branco', populacao: 84779 },
         ];
     if (opcao === 1)
-        console.log(cidades.filter(a => a.populacao >= 200000).reverse());
+        console.log(cidades.filter(a => a.populacao >= 200000).sort(function (a, b) {
+            return (a.populacao < b.populacao) ? 1 : ((b.populacao < a.populacao) ? -1 : 0);
+        }));
     else if (opcao === 2)
         console.log(cidades.find(a => a.nome.toLowerCase() === 'florianópolis'));
 
